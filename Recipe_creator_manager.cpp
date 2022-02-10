@@ -5,6 +5,7 @@
 #include <iterator>
 #include <windows.h>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -31,7 +32,7 @@ void getRecipe();
 int main()
 {
 	cout << "__________________________________________________________________________________________________" << endl << endl;
-	cout << "		                             Welcome in Recipe Creator Manager!" << endl;
+	cout << "		                 Welcome in Recipe Creator Manager!" << endl;
 	cout << "__________________________________________________________________________________________________" << endl << endl;
 	getRecipe();
 	CONSOLE_FONT_INFOEX win;
@@ -127,27 +128,17 @@ void printList(vector<Recipe>& vect)
 		cout << "Cuisine book is empty now." << endl << endl;
 	}
 	else {
-
-		cout << "Appetizers : " << endl;
 		for (std::vector<Recipe>::iterator it0 = vect.begin(); it0 != vect.end(); it0++)
 		{
 			int ik = it0 - vect.begin();
 			if (vect[ik].get_category() == "1")
-				cout << ik + 1 << ": " << vect[ik].get_name() << endl;
-		}
-		cout << "Main courses : " << endl;;
-		for (std::vector<Recipe>::iterator it1 = vect.begin(); it1 != vect.end(); it1++)
-		{
-			int j = it1 - vect.begin();
-			if (vect[j].get_category() == "2")
-				cout << j + 1 << ": " << vect[j].get_name() << endl;
-		}
-		cout << "Desserts : " << endl;
-		for (std::vector<Recipe>::iterator it2 = vect.begin(); it2 != vect.end(); it2++)
-		{
-			int i = it2 - vect.begin();
-			if (vect[i].get_category() == "3")
-				cout << i + 1 << ": " << vect[i].get_name() << endl;
+				cout  << left<< ik + 1 << ": "<< setw(25) << vect[ik].get_name() << setw(25) << "Category : Appetizer " << endl;
+
+			if (vect[ik].get_category() == "2")
+				cout  <<left<< ik + 1 << ": " << setw(25) << vect[ik].get_name() << setw(25) << "Category : Main Course " << endl;
+
+			if (vect[ik].get_category() == "3")
+				cout <<left<< ik + 1 << ": " << setw(25) << vect[ik].get_name() << setw(25) << "Category : Dessert " << endl;
 		}
 		cout << "__________________________________________________________________________________________________" << endl;
 		cout << "Enter the number of recipe whom you want to see ingridients and instructions" << endl;
