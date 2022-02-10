@@ -6,11 +6,13 @@ In the first menu, the user can choose from 4 options:
  - Add a new recipe,
  - View a list of recipes and them pick one and see ingridients and instructions to them,
  - Exit the program.
+
 After selecting the option to change an existing recipe, a submenu is displayed what the user can make changes such as:
  - Change the name of a recipe,
  - Adding a new component,
  - Removal of an existing component,
  - Return to the main menu.
+
 To add a new recipe, select "add a new recipe" from the main menu. The first value to enter will be Category = {1 = Appetizers, 2 = Main course, 3 = Desserts}.
 After selecting the category, enter the name of the recipe.
 You can start entering the ingredients of a given recipe one by one, confirming each with the enter character.
